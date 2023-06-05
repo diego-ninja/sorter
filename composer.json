@@ -3,12 +3,13 @@
     "description": "Sort arrays and objects by multiple fields with unicode characters",
     "license": "BSD-3-Clause",
     "keywords": [
+        "php8.2",
         "sort",
         "sorter",
         "array",
         "objects",
         "collections",
-        "psr-0"
+        "psr-4"
     ],
     "authors": [
         {
