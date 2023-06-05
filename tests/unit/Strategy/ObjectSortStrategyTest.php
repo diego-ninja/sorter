@@ -35,6 +35,9 @@ class ObjectSortStrategyTest extends TestCase
         );
     }
 
+    /**
+     * @dataProvider dataProvider
+     */
     public function testSortComplexDataSet(array $expected, array $unsorted): void
     {
 
