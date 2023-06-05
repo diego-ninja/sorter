@@ -1,4 +1,5 @@
-#Sorter
+# Sorter
+
 [![Latest Stable Version](https://poser.pugx.org/phpextra/sorter/v/stable.svg)](https://packagist.org/packages/diego-ninja/sorter)
 [![Total Downloads](https://poser.pugx.org/phpextra/sorter/downloads.svg)](https://packagist.org/packages/diego-ninja/sorter)
 [![License](https://poser.pugx.org/phpextra/sorter/license.svg)](https://packagist.org/packages/diego-ninja/sorter)
