@@ -3,8 +3,9 @@
 [![Latest Stable Version](https://poser.pugx.org/diego-ninja/sorter/v/stable.svg)](https://packagist.org/packages/diego-ninja/sorter)
 [![Total Downloads](https://poser.pugx.org/diego-ninja/sorter/downloads.svg)](https://packagist.org/packages/diego-ninja/sorter)
 [![License](https://poser.pugx.org/diego-ninja/sorter/license.svg)](https://packagist.org/packages/diego-ninja/sorter)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/diego-ninja/sorter/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/diego-ninja/sorter/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/diego-ninja/sorter/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/diego-ninja/sorter/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/diego-ninja/sorter/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/diego-ninja/sorter/?branch=main)
+[![Build Status](https://scrutinizer-ci.com/g/diego-ninja/sorter/badges/build.png?b=main)](https://scrutinizer-ci.com/g/diego-ninja/sorter/build-status/main)
+[![Code Coverage](https://scrutinizer-ci.com/g/diego-ninja/sorter/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/diego-ninja/sorter/?branch=main)
 
 1. [Installation](#installation)
 2. [Usage](#usage)
