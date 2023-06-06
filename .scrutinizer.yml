@@ -6,13 +6,13 @@ build:
         override: true
       tests:
         override: [php-scrutinizer-run]
-      coverage:
-        tests:
-          override:
-            - command: php vendor/bin/phpunit --coverage-text --coverage-clover=build/coverage/coverage.clover
-              coverage:
-                file: build/coverage/coverage.clover
-                format: clover
+    coverage:
+      tests:
+        override:
+          - command: php vendor/bin/phpunit --coverage-text --coverage-clover=build/coverage/coverage.clover
+            coverage:
+              file: build/coverage/coverage.clover
+              format: clover
 
 filter:
   excluded_paths: [tests/*]
@@ -23,10 +23,10 @@ checks:
     remove_php_closing_tag: true
     remove_trailing_whitespace: true
     fix_use_statements:
-      remove_unused: true
-      preserve_multiple: false
-      preserve_blanklines: true
-      order_alphabetically: true
+    remove_unused: true
+    preserve_multiple: false
+    preserve_blanklines: true
+    order_alphabetically: true
     fix_php_opening_tag: true
     fix_linefeed: true
     fix_line_ending: true
