@@ -5,3 +5,6 @@ atlassian-ide-plugin.xml
 nbproject
 phpunit.xml
 .phpunit.cache/
+.phive/
+.phplint.cache/
+
