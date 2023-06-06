@@ -7,4 +7,5 @@ phpunit.xml
 .phpunit.cache/
 .phive/
 .phplint.cache/
+coverage.clover
 
