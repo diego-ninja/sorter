@@ -9,9 +9,9 @@ build:
     coverage:
       tests:
         override:
-          - command: php vendor/bin/phpunit --coverage-text --coverage-clover=build/coverage/coverage.clover
+          - command: phpunit --coverage-text --coverage-clover=coverage.clover
             coverage:
-              file: build/coverage/coverage.clover
+              file: coverage.clover
               format: clover
 
 filter:
