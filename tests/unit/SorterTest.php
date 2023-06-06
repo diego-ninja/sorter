@@ -32,7 +32,7 @@ class SorterTest extends TestCase
 
         $this->assertEquals($expected, $sorted);
     }
-    
+
     public function testSortAnArrayOfStringsUsingDefaultSorterMaintainingKeyAssociation(): void
     {
         $expected = array('k' => '20', -10 => '1020', 194 => 'abc', 10 => 'bcd', 0 => 'cdb');

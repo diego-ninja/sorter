@@ -11,7 +11,7 @@ final class NumericComparator implements ComparatorInterface
     /**
      * {@inheritdoc}
      */
-    public function compare(mixed $a, mixed$b): int
+    public function compare(mixed $a, mixed $b): int
     {
         return bccomp((string) $a, (string) $b, $this->scale);
     }
