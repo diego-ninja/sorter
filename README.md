@@ -1,7 +1,9 @@
 # Sorter
 
-[![Latest Stable Version](https://poser.pugx.org/diego-ninja/sorter/v/stable.svg)](https://packagist.org/packages/diego-ninja/sorter)
-[![Total Downloads](https://poser.pugx.org/diego-ninja/sorter/downloads.svg)](https://packagist.org/packages/diego-ninja/sorter)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/diego-ninja/sorter.svg?style=flat)](https://packagist.org/packages/diego-ninja/sorter)
+[![Total Downloads](https://img.shields.io/packagist/dt/diego-ninja/sorter.svg?style=flat&color=blue)](https://packagist.org/packages/diego-ninja/sorter)
+![PHP Version](https://img.shields.io/packagist/php-v/diego-ninja/sorter.svg?style=flat)
+[![wakatime](https://wakatime.com/badge/user/bd65f055-c9f3-4f73-92aa-3c9810f70cc3/project/faea46b2-0902-4284-ab88-d971fe3b3390.svg)](https://wakatime.com/badge/user/bd65f055-c9f3-4f73-92aa-3c9810f70cc3/project/faea46b2-0902-4284-ab88-d971fe3b3390)
 [![License](https://poser.pugx.org/diego-ninja/sorter/license.svg)](https://packagist.org/packages/diego-ninja/sorter)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/diego-ninja/sorter/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/diego-ninja/sorter/?branch=main)
 [![Build Status](https://scrutinizer-ci.com/g/diego-ninja/sorter/badges/build.png?b=main)](https://scrutinizer-ci.com/g/diego-ninja/sorter/build-status/main)

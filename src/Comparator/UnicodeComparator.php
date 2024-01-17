@@ -3,15 +3,16 @@
 namespace Ninja\Sorter\Comparator;
 
 use Collator;
+use Locale;
 
-class UnicodeComparator implements ComparatorInterface
+readonly class UnicodeComparator implements ComparatorInterface
 {
     private Collator $collator;
 
     public function __construct(?string $locale = null)
     {
         if (!$locale) {
-            $locale = \Locale::getDefault();
+            $locale = Locale::getDefault();
         }
 
         $this->collator = new Collator($locale);
@@ -20,7 +21,7 @@ class UnicodeComparator implements ComparatorInterface
 
     public function getLocale(): string
     {
-        return $this->collator->getLocale(\Locale::VALID_LOCALE);
+        return $this->collator->getLocale(Locale::VALID_LOCALE);
     }
 
     /**
@@ -35,7 +36,7 @@ class UnicodeComparator implements ComparatorInterface
     /**
      * {@inheritdoc}
      */
-    public function supports($value): bool
+    public function supports(mixed $value): bool
     {
         return $value === null || is_string($value) || is_int($value) || is_float($value);
     }

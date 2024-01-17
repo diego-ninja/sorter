@@ -12,8 +12,8 @@ class SorterTest extends TestCase
 {
     public function testSortAnArrayOfStringsUsingDefaultSorter(): void
     {
-        $expected = array('20', '1020', 'abc', 'bcd', 'cdb');
-        $sortable = array('bcd', 'cdb', '20', 'abc', '1020');
+        $expected = ['20', '1020', 'abc', 'bcd', 'cdb'];
+        $sortable = ['bcd', 'cdb', '20', 'abc', '1020'];
 
         $sorter = new Sorter();
         $sorted = $sorter->sort($sortable);
@@ -23,8 +23,8 @@ class SorterTest extends TestCase
 
     public function testSortAnArrayOfStringsUsingDefaultSorterInReverseOrder(): void
     {
-        $expected = array('e', 'd', 'c', 'b', 'a');
-        $sortable = array('a', 'c', 'b', 'e', 'd');
+        $expected = ['e', 'd', 'c', 'b', 'a'];
+        $sortable = ['a', 'c', 'b', 'e', 'd'];
 
         $sorter = new Sorter();
         $sorter->setSortOrder(SorterInterface::DESC);
@@ -35,10 +35,10 @@ class SorterTest extends TestCase
 
     public function testSortAnArrayOfStringsUsingDefaultSorterMaintainingKeyAssociation(): void
     {
-        $expected = array('k' => '20', -10 => '1020', 194 => 'abc', 10 => 'bcd', 0 => 'cdb');
-        $sortable = array(10 => 'bcd', 0 => 'cdb', 'k' => '20', 194 => 'abc', -10 => '1020');
+        $expected = ['k' => '20', -10 => '1020', 194 => 'abc', 10 => 'bcd', 0 => 'cdb'];
+        $sortable = [10 => 'bcd', 0 => 'cdb', 'k' => '20', 194 => 'abc', -10 => '1020'];
 
-        $sorter = new Sorter();
+        $sorter   = new Sorter();
         $strategy = new SimpleSortStrategy(new UnicodeCIComparator());
         $strategy->setPreserveKeys(true);
         $sorter->setStrategy($strategy);

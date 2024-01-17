@@ -7,45 +7,51 @@ use PHPUnit\Framework\TestCase;
 
 class NumericComparatorTest extends TestCase
 {
+    /**
+     * @return array<int, array<int,mixed>>
+     */
     public static function formats(): array
     {
-        return array(
-            array(123456, true),                   // integers
-            array(123456.123, true),               // floats
-            array(new \DateTime(), false),         // date time
-            array(new \stdClass(), false),         // objects
-            array(true, false),                    // booleans
-        );
+        return [
+            [123456, true],                   // integers
+            [123456.123, true],               // floats
+            [new \DateTime(), false],         // date time
+            [new \stdClass(), false],         // objects
+            [true, false],                    // booleans
+        ];
     }
 
+    /**
+     * @return array<int, array<int,mixed>>
+     */
     public static function values(): array
     {
-        return array(
-            array(-1000, -100, -1),
-            array(1000, -100, 1),
-            array(-100, -100, 0),
+        return [
+            [-1000, -100, -1],
+            [1000, -100, 1],
+            [-100, -100, 0],
 
-            array(-100, -1000, 1),
-            array(-100, 1000, -1),
+            [-100, -1000, 1],
+            [-100, 1000, -1],
 
-            array(100, 1000, -1),
-            array(1000, 100, 1),
-            array(100, 100, 0),
+            [100, 1000, -1],
+            [1000, 100, 1],
+            [100, 100, 0],
 
-            array('100.00', '100.00', 0),
-            array('101.00', '100.00', 1),
-            array('101.00', '-100.00', 1),
-            array('100.00', '101.00', -1),
-            array('-100.00', '101.00', -1),
+            ['100.00', '100.00', 0],
+            ['101.00', '100.00', 1],
+            ['101.00', '-100.00', 1],
+            ['100.00', '101.00', -1],
+            ['-100.00', '101.00', -1],
 
-            array('100', '100', 0),
-        );
+            ['100', '100', 0],
+        ];
     }
 
     /**
      * @dataProvider formats
      */
-    public function testSupportedFormats(mixed $value, $is_supported): void
+    public function testSupportedFormats(mixed $value, mixed $is_supported): void
     {
         $comparator = new NumericComparator();
         $this->assertSame($is_supported, $comparator->supports($value));
@@ -54,7 +60,7 @@ class NumericComparatorTest extends TestCase
     /**
      * @dataProvider values
      */
-    public function testCompareValues($a, $b, $expectedResult): void
+    public function testCompareValues(mixed $a, mixed $b, mixed $expectedResult): void
     {
         $comparator = new NumericComparator();
         $this->assertEquals($expectedResult, $comparator->compare($a, $b));

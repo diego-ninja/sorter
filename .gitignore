@@ -4,6 +4,7 @@ build
 atlassian-ide-plugin.xml
 nbproject
 .phpunit.cache/
+.php-cs-fixer.cache
 .phive/
 .phplint.cache/
 coverage.clover

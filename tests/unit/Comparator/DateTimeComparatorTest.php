@@ -8,34 +8,40 @@ use PHPUnit\Framework\TestCase;
 
 class DateTimeComparatorTest extends TestCase
 {
+    /**
+     * @return array<int, array<int,mixed>>
+     */
     public static function formats(): array
     {
-        return array(
-            array(new DateTime(), true),           // date time
-            array(123456, false),                   // integers
-            array(123456.123, false),               // floats
-            array(new \stdClass(), false),          // objects
-            array(true, false),                     // booleans
-        );
+        return [
+            [new DateTime(), true],           // date time
+            [123456, false],                   // integers
+            [123456.123, false],               // floats
+            [new \stdClass(), false],          // objects
+            [true, false],                     // booleans
+        ];
     }
 
+    /**
+     * @return array<int, array<int,mixed>>
+     */
     public static function values(): array
     {
         return [
             [
                 DateTime::createFromFormat('Y-m-d H:i:s', '2016-01-01 12:56:11'),
                 DateTime::createFromFormat('Y-m-d H:i:s', '2016-01-01 12:56:11'),
-                0
+                0,
             ],
             [
                 DateTime::createFromFormat('Y-m-d H:i:s', '2016-01-01 13:56:11'),
                 DateTime::createFromFormat('Y-m-d H:i:s', '2016-01-01 12:56:11'),
-                1
+                1,
             ],
             [
                 DateTime::createFromFormat('Y-m-d H:i:s', '2016-01-01 12:56:11'),
                 DateTime::createFromFormat('Y-m-d H:i:s', '2016-01-01 13:56:11'),
-                -1
+                -1,
             ],
         ];
     }
@@ -52,7 +58,7 @@ class DateTimeComparatorTest extends TestCase
     /**
      * @dataProvider values
      */
-    public function testCompareValues($a, $b, $expectedResult): void
+    public function testCompareValues(mixed $a, mixed $b, mixed $expectedResult): void
     {
         $comparator = new DateTimeComparator();
         $this->assertEquals($expectedResult, $comparator->compare($a, $b));

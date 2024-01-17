@@ -27,6 +27,10 @@ abstract class AbstractSorter implements SorterInterface
         return $this;
     }
 
+    /**
+     * @param array<string|int, mixed> $collection
+     * @return array<string|int, mixed>
+     */
     public function sort(array $collection): array
     {
         if (!$this->strategy) {
