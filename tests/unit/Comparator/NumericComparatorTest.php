@@ -7,6 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class NumericComparatorTest extends TestCase
 {
+    /**
+     * @return array<int, array<int,mixed>>
+     */
     public static function formats(): array
     {
         return [
@@ -18,6 +21,9 @@ class NumericComparatorTest extends TestCase
         ];
     }
 
+    /**
+     * @return array<int, array<int,mixed>>
+     */
     public static function values(): array
     {
         return [
@@ -45,7 +51,7 @@ class NumericComparatorTest extends TestCase
     /**
      * @dataProvider formats
      */
-    public function testSupportedFormats(mixed $value, $is_supported): void
+    public function testSupportedFormats(mixed $value, mixed $is_supported): void
     {
         $comparator = new NumericComparator();
         $this->assertSame($is_supported, $comparator->supports($value));
@@ -54,7 +60,7 @@ class NumericComparatorTest extends TestCase
     /**
      * @dataProvider values
      */
-    public function testCompareValues($a, $b, $expectedResult): void
+    public function testCompareValues(mixed $a, mixed $b, mixed $expectedResult): void
     {
         $comparator = new NumericComparator();
         $this->assertEquals($expectedResult, $comparator->compare($a, $b));

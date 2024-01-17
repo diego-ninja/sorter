@@ -8,6 +8,9 @@ use PHPUnit\Framework\TestCase;
 
 class DateTimeComparatorTest extends TestCase
 {
+    /**
+     * @return array<int, array<int,mixed>>
+     */
     public static function formats(): array
     {
         return [
@@ -19,6 +22,9 @@ class DateTimeComparatorTest extends TestCase
         ];
     }
 
+    /**
+     * @return array<int, array<int,mixed>>
+     */
     public static function values(): array
     {
         return [
@@ -52,7 +58,7 @@ class DateTimeComparatorTest extends TestCase
     /**
      * @dataProvider values
      */
-    public function testCompareValues($a, $b, $expectedResult): void
+    public function testCompareValues(mixed $a, mixed $b, mixed $expectedResult): void
     {
         $comparator = new DateTimeComparator();
         $this->assertEquals($expectedResult, $comparator->compare($a, $b));

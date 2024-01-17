@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Copyright (c) 2013 Jacek Kobus <kobus.jacek@gmail.com>
- * See the file LICENSE.txt for copying permission.
- */
-
 namespace Ninja\Sorter\Strategy;
 
 use ArrayAccess;
@@ -30,7 +25,7 @@ class ComplexSortStrategy extends AbstractSortStrategy
     {
         $this->property_map[] = [
             'accessor'   => $accessor,
-            'direction'  => $order       ?? $this->getOrder(),
+            'direction'  => $order      ?? $this->getOrder(),
             'comparator' => $comparator ?? $this->getComparator(),
         ];
 

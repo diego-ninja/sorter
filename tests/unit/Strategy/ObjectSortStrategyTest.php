@@ -8,6 +8,9 @@ use PHPUnit\Framework\TestCase;
 
 class ObjectSortStrategyTest extends TestCase
 {
+    /**
+     * @return array<int, array<int, mixed>>
+     */
     public static function dataProvider(): array
     {
         return [
@@ -36,6 +39,8 @@ class ObjectSortStrategyTest extends TestCase
     }
 
     /**
+     * @param array<int,object> $expected
+     * @param array<int,object> $unsorted
      * @dataProvider dataProvider
      */
     public function testSortComplexDataSet(array $expected, array $unsorted): void

@@ -7,6 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class UnicodeComparatorTest extends TestCase
 {
+    /**
+     * @return array<int, array<int,mixed>>
+     */
     public static function formats(): array
     {
         return [
@@ -18,6 +21,9 @@ class UnicodeComparatorTest extends TestCase
         ];
     }
 
+    /**
+     * @return array<int, array<int,mixed>>
+     */
     public static function values(): array
     {
         return [

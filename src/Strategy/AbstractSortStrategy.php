@@ -18,7 +18,7 @@ abstract class AbstractSortStrategy implements StrategyInterface
         }
     }
 
-    public function setComparator(ComparatorInterface $comparator): self
+    public function setComparator(ComparatorInterface $comparator): static
     {
         $this->comparator = $comparator;
 
@@ -30,7 +30,7 @@ abstract class AbstractSortStrategy implements StrategyInterface
         return $this->comparator;
     }
 
-    public function setOrder(int $order): self
+    public function setOrder(int $order): static
     {
         $this->order = $order;
 
@@ -42,7 +42,7 @@ abstract class AbstractSortStrategy implements StrategyInterface
         return $this->order;
     }
 
-    public function setPreserveKeys(bool $preserve_keys): self
+    public function setPreserveKeys(bool $preserve_keys): static
     {
         $this->preserve_keys = $preserve_keys;
         return $this;
