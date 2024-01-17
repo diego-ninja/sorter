@@ -10,13 +10,13 @@ class DateTimeComparatorTest extends TestCase
 {
     public static function formats(): array
     {
-        return array(
-            array(new DateTime(), true),           // date time
-            array(123456, false),                   // integers
-            array(123456.123, false),               // floats
-            array(new \stdClass(), false),          // objects
-            array(true, false),                     // booleans
-        );
+        return [
+            [new DateTime(), true],           // date time
+            [123456, false],                   // integers
+            [123456.123, false],               // floats
+            [new \stdClass(), false],          // objects
+            [true, false],                     // booleans
+        ];
     }
 
     public static function values(): array
@@ -25,17 +25,17 @@ class DateTimeComparatorTest extends TestCase
             [
                 DateTime::createFromFormat('Y-m-d H:i:s', '2016-01-01 12:56:11'),
                 DateTime::createFromFormat('Y-m-d H:i:s', '2016-01-01 12:56:11'),
-                0
+                0,
             ],
             [
                 DateTime::createFromFormat('Y-m-d H:i:s', '2016-01-01 13:56:11'),
                 DateTime::createFromFormat('Y-m-d H:i:s', '2016-01-01 12:56:11'),
-                1
+                1,
             ],
             [
                 DateTime::createFromFormat('Y-m-d H:i:s', '2016-01-01 12:56:11'),
                 DateTime::createFromFormat('Y-m-d H:i:s', '2016-01-01 13:56:11'),
-                -1
+                -1,
             ],
         ];
     }

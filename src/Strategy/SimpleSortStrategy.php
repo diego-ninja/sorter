@@ -7,6 +7,4 @@
 
 namespace Ninja\Sorter\Strategy;
 
-class SimpleSortStrategy extends AbstractSortStrategy
-{
-}
+class SimpleSortStrategy extends AbstractSortStrategy {}

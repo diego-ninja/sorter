@@ -14,6 +14,9 @@ use Ninja\Sorter\Comparator\UnicodeCIComparator;
 
 class ComplexSortStrategy extends AbstractSortStrategy
 {
+    /**
+     * @var array<string|int, mixed>
+     */
     private array $property_map = [];
 
     public function __construct(protected ?ComparatorInterface $comparator = null)
@@ -25,20 +28,20 @@ class ComplexSortStrategy extends AbstractSortStrategy
 
     public function sortBy(mixed $accessor, int $order = null, ComparatorInterface $comparator = null): static
     {
-        $this->property_map[] = array(
-            'accessor' => $accessor,
-            'direction' => $order ?? $this->getOrder(),
-            'comparator' => $comparator ?? $this->getComparator()
-        );
+        $this->property_map[] = [
+            'accessor'   => $accessor,
+            'direction'  => $order       ?? $this->getOrder(),
+            'comparator' => $comparator ?? $this->getComparator(),
+        ];
 
         return $this;
     }
 
     protected function createSortTransformFunction(): Closure
     {
-        $propertyMap = $this->property_map;
+        $propertyMap       = $this->property_map;
         $propertyExtractor = $this->getPropertyExtractor();
-        $valueChecker = $this->getValueChecker();
+        $valueChecker      = $this->getValueChecker();
 
         return static function (mixed $a, mixed $b) use ($propertyMap, $propertyExtractor, $valueChecker) {
 
@@ -84,7 +87,7 @@ class ComplexSortStrategy extends AbstractSortStrategy
                 }
 
                 if (is_object($property) && property_exists($property, $accessor)) {
-                    return $property->$accessor;
+                    return $property->{$accessor};
                 }
             }
 
@@ -92,6 +95,10 @@ class ComplexSortStrategy extends AbstractSortStrategy
         };
     }
 
+    /**
+     * @param array<string|int, mixed> $collection
+     * @return array<string|int, mixed>
+     */
     public function sort(array $collection): array
     {
         if (empty($this->property_map)) {

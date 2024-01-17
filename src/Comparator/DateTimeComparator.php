@@ -2,7 +2,9 @@
 
 namespace Ninja\Sorter\Comparator;
 
-final class DateTimeComparator implements ComparatorInterface
+use DateTimeInterface;
+
+final readonly class DateTimeComparator implements ComparatorInterface
 {
     public function compare(mixed $a, mixed $b): int
     {
@@ -17,8 +19,8 @@ final class DateTimeComparator implements ComparatorInterface
         return 0;
     }
 
-    public function supports($value): bool
+    public function supports(mixed $value): bool
     {
-        return $value instanceof \DateTimeInterface;
+        return $value instanceof DateTimeInterface;
     }
 }

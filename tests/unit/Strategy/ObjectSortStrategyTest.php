@@ -10,29 +10,29 @@ class ObjectSortStrategyTest extends TestCase
 {
     public static function dataProvider(): array
     {
-        return array(
-            array(
-            // ---
+        return [
+            [
+                // ---
 
-                array(
-                    (object)array('name' => 'Betty', 'position' => '1', 'rating' => '2'),
-                    (object)array('name' => 'Ann', 'position' => '2', 'rating' => '1'),
-                    (object)array('name' => 'Ann', 'position' => '2', 'rating' => '2'),
-                    (object)array('name' => 'Ann', 'position' => '3', 'rating' => '3'),
-                ),
+                [
+                    (object)['name' => 'Betty', 'position' => '1', 'rating' => '2'],
+                    (object)['name' => 'Ann', 'position' => '2', 'rating' => '1'],
+                    (object)['name' => 'Ann', 'position' => '2', 'rating' => '2'],
+                    (object)['name' => 'Ann', 'position' => '3', 'rating' => '3'],
+                ],
 
                 // unsorted
-                array(
-                    (object)array('name' => 'Ann', 'position' => '3', 'rating' => '3'),
-                    (object)array('name' => 'Ann', 'position' => '2', 'rating' => '2'),
-                    (object)array('name' => 'Ann', 'position' => '2', 'rating' => '1'),
-                    (object)array('name' => 'Betty', 'position' => '1', 'rating' => '2'),
-                )
-            )
+                [
+                    (object)['name' => 'Ann', 'position' => '3', 'rating' => '3'],
+                    (object)['name' => 'Ann', 'position' => '2', 'rating' => '2'],
+                    (object)['name' => 'Ann', 'position' => '2', 'rating' => '1'],
+                    (object)['name' => 'Betty', 'position' => '1', 'rating' => '2'],
+                ],
+            ],
 
             // ---
 
-        );
+        ];
     }
 
     /**
@@ -46,8 +46,7 @@ class ObjectSortStrategyTest extends TestCase
             ->setOrder(SorterInterface::ASC)
             ->sortBy('position')
             ->sortBy('name')
-            ->sortBy('rating')
-        ;
+            ->sortBy('rating');
 
         $this->assertEquals($expected, $strategy->sort($unsorted));
     }

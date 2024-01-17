@@ -9,47 +9,47 @@ class UnicodeComparatorTest extends TestCase
 {
     public static function formats(): array
     {
-        return array(
-            array('zażółć gęślą jaźń', true),       // strings
-            array(123456, true),                    // integers
-            array(123456.123, true),                // floats
-            array(new \stdClass(), false),          // objects
-            array(true, false),                     // booleans
-        );
+        return [
+            ['zażółć gęślą jaźń', true],       // strings
+            [123456, true],                    // integers
+            [123456.123, true],                // floats
+            [new \stdClass(), false],          // objects
+            [true, false],                     // booleans
+        ];
     }
 
     public static function values(): array
     {
-        return array(
+        return [
 
-            array(-1000, -100, 1), // correct
-            array(1000, -100, 1),
-            array(-100, -100, 0),
+            [-1000, -100, 1], // correct
+            [1000, -100, 1],
+            [-100, -100, 0],
 
-            array(-100, -1000, -1), // correct
-            array(-100, 1000, -1),
+            [-100, -1000, -1], // correct
+            [-100, 1000, -1],
 
-            array(100, 1000, -1),
-            array(1000, 100, 1),
-            array(100, 100, 0),
+            [100, 1000, -1],
+            [1000, 100, 1],
+            [100, 100, 0],
 
-            array('-1000', '-100', 1),
-            array('-100', '100', -1),
-            array('100', '-100', 1),
-            array('-100', '-100', 0),
-            array('-1', '1', -1),
-            array('1', '-1', 1),
-            array('-1', '-1', 0),
-            array('1', '1', 0),
-            array('1', '2', -1),
-            array('2', '1', 1),
-            array('a', 'a', 0),
-            array('a', 'b', -1),
-            array('b', 'a', 1),
-            array('zażółć gęślą jaźń', 'zażółć gęślą jaźń', 0),
-            array('fzażółć gęślą jaźń', 'ęzażółć gęślą jaźń', 1),
-            array('ęzażółć gęślą jaźń', 'fzażółć gęślą jaźń', -1),
-        );
+            ['-1000', '-100', 1],
+            ['-100', '100', -1],
+            ['100', '-100', 1],
+            ['-100', '-100', 0],
+            ['-1', '1', -1],
+            ['1', '-1', 1],
+            ['-1', '-1', 0],
+            ['1', '1', 0],
+            ['1', '2', -1],
+            ['2', '1', 1],
+            ['a', 'a', 0],
+            ['a', 'b', -1],
+            ['b', 'a', 1],
+            ['zażółć gęślą jaźń', 'zażółć gęślą jaźń', 0],
+            ['fzażółć gęślą jaźń', 'ęzażółć gęślą jaźń', 1],
+            ['ęzażółć gęślą jaźń', 'fzażółć gęślą jaźń', -1],
+        ];
     }
 
     public function testCreateNewUnicodeComparatorInstanceWithoutLocaleReturnsInstanceWithDefaultSystemLocale(): void

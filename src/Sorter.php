@@ -2,6 +2,4 @@
 
 namespace Ninja\Sorter;
 
-class Sorter extends AbstractSorter
-{
-}
+class Sorter extends AbstractSorter {}

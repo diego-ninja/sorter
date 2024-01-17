@@ -54,7 +54,11 @@ abstract class AbstractSortStrategy implements StrategyInterface
     protected function createSortTransformFunction(): Closure
     {
         $comparator = $this->getComparator();
-        $checker = $this->getValueChecker();
+        if ($comparator === null) {
+            throw new RuntimeException('Comparator was not defined');
+        }
+
+        $checker   = $this->getValueChecker();
         $sortOrder = $this->order;
 
         return static function (mixed $a, mixed $b) use ($comparator, $checker, $sortOrder) {

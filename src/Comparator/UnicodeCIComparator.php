@@ -2,7 +2,7 @@
 
 namespace Ninja\Sorter\Comparator;
 
-final class UnicodeCIComparator extends UnicodeComparator
+final readonly class UnicodeCIComparator extends UnicodeComparator
 {
     /**
      * {@inheritdoc}
